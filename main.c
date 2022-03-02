@@ -122,11 +122,11 @@ int findWinner(char boxes[3][3], int player)
 
     // search winner diagonally
     count = 0;
+    int x = 2;
+    int y = 0;
 
     for (int i = 0; i < 2; i++)
     {
-        int x = 2;
-        int y = 0;
 
         if (boxes[y][x] == boxes[y + 1][x - 1])
         {
