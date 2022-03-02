@@ -64,15 +64,71 @@ int findWinner(char boxes[3][3], int player)
 
                 if (count == 2)
                 {
-                    printf("winner finded.\n");
-                    break;
+                    return 0;
                 }
+            }
+        }
+    }
+
+    // search winner vertically
+    for (int x = 0; x < 3; x++)
+    {
+        count = 0;
+
+        for (int y = 0; y < 2; y++)
+        {
+            if (boxes[y][x] == boxes[y + 1][x])
+            {
+                count++;
+
+                if (count == 2)
+                {
+                    return 0;
+                }
+            }
+        }
+    }
+
+    // search winner diagonally
+    count = 0;
+
+    for (int xy = 0; xy < 2; xy++)
+    {
+
+        if (boxes[xy][xy] == boxes[xy + 1][xy + 1])
+        {
+            count++;
+
+            if (count == 2)
+            {
+                return 0;
+            }
+        }
+    }
+
+    // search winner diagonally
+    count = 0;
+
+    for (int i = 0; i < 2; i++)
+    {
+        int x = 2;
+        int y = 0;
+
+        if (boxes[y][x] == boxes[y + 1][x - 1])
+        {
+            count++;
+            x--;
+            y++;
+
+            if (count == 2)
+            {
+                return 0;
             }
         }
     }
 }
 
-void main(void)
+int main(void)
 {
     int x, y, chosenBox;
     char boxes[3][3] = {"123", "456", "789"};
