@@ -47,10 +47,11 @@ void storePlay(char boxes[3][3], int *player, int *x, int *y)
     }
 }
 
-void findWinner(char boxes[3][3])
+int findWinner(char boxes[3][3], int player)
 {
-    int count;
+    int count = 0;
 
+    // search winner horizontally
     for (int y = 0; y < 3; y++)
     {
         count = 0;
