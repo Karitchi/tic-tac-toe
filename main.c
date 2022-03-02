@@ -1,19 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-    1. montrer le board (vide au debut)
-    2. demander en dessous du board au joueur 1 de jouer (entrer le num d'une case)
-    3. afficher le nouveau board
-    4. demander au joueur 2 de jouer
-    5. afficher le gagnant
- */
-/*
-    1. montrer le board:
-        creer une fonction qui va print le board
- */
-
-void printBoard(char boxes[])
 {
     system("clear");
     printf("         |         |          \n");
