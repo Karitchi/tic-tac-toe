@@ -26,7 +26,7 @@ void askPlayerBox(char boxes[3][3], int *player, int *x, int *y)
     int chosenBox;
     do
     {
-        printf("Player %d, chose a box to play on: ", *player);
+        *player ? printf("Player O, chose a box to play on: ") : printf("Player X, chose a box to play on: ");
         scanf("%d", &chosenBox);
         *x = (chosenBox - 1) % 3;
         *y = (chosenBox - 1) / 3;
