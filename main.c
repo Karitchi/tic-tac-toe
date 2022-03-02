@@ -47,6 +47,30 @@ void storePlay(char boxes[3][3], int *player, int *x, int *y)
     }
 }
 
+void findWinner(char boxes[3][3])
+{
+    int count;
+
+    for (int y = 0; y < 3; y++)
+    {
+        count = 0;
+
+        for (int x = 0; x < 2; x++)
+        {
+            if (boxes[y][x] == boxes[y][x + 1])
+            {
+                count++;
+
+                if (count == 2)
+                {
+                    printf("winner finded.\n");
+                    break;
+                }
+            }
+        }
+    }
+}
+
 void main(void)
 {
     int x, y, chosenBox;
@@ -61,7 +85,7 @@ void main(void)
         storePlay(boxes, &player, &x, &y);
         if (isFinished < 6)
         {
-            findWinner();
+            findWinner(boxes);
         }
         isFinished--;
     }
