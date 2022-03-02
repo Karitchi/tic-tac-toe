@@ -23,7 +23,7 @@ void printBoard(char boxes[3][3])
 
 void askPlayerBox(char boxes[3][3], int *player, int *x, int *y)
 {
-
+    int chosenBox;
     do
     {
         printf("Player %d, chose a box to play on: ", *player);
@@ -57,8 +57,12 @@ void main(void)
     while (isFinished)
     {
         printBoard(boxes);
-        askPlayerBox(boxes, &player, &chosenBox);
-        storePlay(boxes, &player, chosenBox);
+        askPlayerBox(boxes, &player, &x, &y);
+        storePlay(boxes, &player, &x, &y);
+        if (isFinished < 6)
+        {
+            findWinner();
+        }
         isFinished--;
     }
     printBoard(boxes);
