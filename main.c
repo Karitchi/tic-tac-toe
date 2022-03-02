@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// !bug: detect winner when:
-// !          |         |
-// !     X    |         |    X
-// !          |         |
-// ! _________|_________|__________
-// !          |         |
-// !          |    X    |
-// !          |         |
-// ! _________|_________|__________
-// !          |         |
-// !          |         |
-// !          |         |
-// !          |         |
-
 void printBoard(char boxes[3][3])
 {
     system("clear");
