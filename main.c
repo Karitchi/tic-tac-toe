@@ -140,11 +140,14 @@ int main(void)
         printBoard(boxes);
         askPlayerBox(boxes, &player, &x, &y);
         storePlay(boxes, &player, &x, &y);
-        if (isFinished < 6)
+        if (isFinished < 6 && findWinner(boxes, player) == 0)
         {
-            findWinner(boxes);
+            printBoard(boxes);
+            player ? printf("Player X win\n") : printf("Player O win\n");
+            return 0;
         }
         isFinished--;
     }
     printBoard(boxes);
+    printf("Tie\n");
 }
